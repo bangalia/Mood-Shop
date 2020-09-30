@@ -2,7 +2,6 @@ const itemList = document.getElementById('item-list')
 const cartQty = document.getElementById('cart-qty')
 const cartTotal = document.getElementById('cart-total')
 
-itemList.innerHTML = '<li> Hello World</li>'
 const itemsContainer = document.getElementById('items')
 import data from './data.js'
 
@@ -29,6 +28,11 @@ for (let i=0; i<data.length; ++i) {
   newDiv.appendChild(button)
   itemsContainer.appendChild(newDiv)
 }
+const all_items_button = Array.from(document.querySelectorAll("Button"))
+all_items_button.forEach(et => Element.addEventListner('click', () =>{
+  addItem(elt.getAttribute('id'), elt.getAttribute('data-price'))
+  showItems()
+}))
 
 const cart = [ ]
 // Add item function
